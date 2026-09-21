@@ -537,6 +537,10 @@ body {
     .add-group-btn {
         height: 60px;
         font-size: 40px;
-    
+
+    .input-unit {
+        font-size: 14px;
+        right: 15px;
+
     }
 }
