@@ -473,19 +473,13 @@ body {
     .add-group-btn {
         height: 80px;
         font-size: 50px;
+    }
 
     .input-unit {
         font-size: 12px !important;
         right: 15px !important;
     }
-}
 
-
-/* =========================
-   PHONE
-========================= */
-
-@media (max-width: 601px) {
 
     body {
         padding: 12px 8px 25px;
@@ -541,11 +535,6 @@ body {
     .add-group-btn {
         height: 60px;
         font-size: 40px;
-    }
-
-    .input-unit {
-        font-size: 12px !important;
-        right: 15px !important;
     }
 
     .bookmark {
