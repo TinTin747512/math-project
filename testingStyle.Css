@@ -542,4 +542,14 @@ body {
         height: 60px;
         font-size: 40px;
     }
+
+    .input-unit {
+        font-size: 12px !important;
+        right: 15px !important;
+    }
+
+    .bookmark {
+        width: 45px !important;
+        height: 55px !important;
+    }
 }
