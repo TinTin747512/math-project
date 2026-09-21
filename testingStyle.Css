@@ -417,81 +417,6 @@ body {
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 20px 12px 40px;
-    }
-
-    .calculator-box {
-        padding: 25px 15px 20px;
-        border-radius: 35px;
-    }
-
-    .product-area {
-        padding: 25px 18px;
-        border-radius: 28px;
-    }
-
-    .delete-btn {
-        width: 38px;
-        height: 38px;
-
-        top: 10px;
-        right: 12px;
-
-        font-size: 24px;
-    }
-
-    .product-name-input {
-        font-size: 30px;
-    }
-
-    .field label {
-        font-size: 25px;
-    }
-
-    .input-wrap input,
-    .input-wrap select {
-
-        height: 70px;
-
-        font-size: 25px;
-
-        border-radius: 23px;
-    }
-
-    .add-product-btn {
-
-        width: 85%;
-
-        min-height: 70px;
-
-        font-size: 25px;
-    }
-
-    .calculate-btn {
-
-        min-height: 75px;
-
-        font-size: 30px;
-    }
-
-    .result-text {
-        font-size: 22px;
-    }
-
-    .add-group-btn {
-
-        height: 90px;
-
-        font-size: 55px;
-    }
-
-/* =========================
-   COMPUTER
-========================= */
-
-@media (min-width: 601px) {
-
     .app {
         max-width: 680px;
     }
@@ -534,17 +459,11 @@ body {
     .add-product-btn {
         min-height: 60px;
         font-size: 23px;
-        margin: 20px auto 25px;
     }
 
     .calculate-btn {
         min-height: 68px;
         font-size: 28px;
-    }
-
-    .result-box {
-        min-height: 85px;
-        padding: 18px 20px 18px 65px;
     }
 
     .result-text {
@@ -555,6 +474,8 @@ body {
         height: 80px;
         font-size: 50px;
     }
+}
+
 
 /* =========================
    PHONE
@@ -566,39 +487,22 @@ body {
         padding: 12px 8px 25px;
     }
 
-    .app {
-        width: 100%;
-    }
-
     .main-title {
         font-size: 52px;
-        margin-bottom: 12px;
     }
 
     .calculator-box {
         padding: 16px 10px 14px;
         border-radius: 25px;
-        margin-bottom: 18px;
     }
 
     .product-area {
         padding: 18px 12px;
         border-radius: 21px;
-        margin-bottom: 14px;
-    }
-
-    .delete-btn {
-        width: 30px;
-        height: 30px;
-        top: 7px;
-        right: 8px;
-        font-size: 19px;
     }
 
     .product-name-input {
         font-size: 23px;
-        margin-bottom: 14px;
-        border-bottom-width: 2px;
     }
 
     .field {
@@ -607,63 +511,31 @@ body {
 
     .field label {
         font-size: 18px;
-        margin-bottom: 4px;
     }
 
     .input-wrap input,
     .input-wrap select {
         height: 50px;
-        padding: 6px 50px 6px 14px;
         font-size: 18px;
         border-radius: 17px;
     }
 
-    .input-unit {
-        right: 15px;
-        font-size: 16px;
-    }
-
     .add-product-btn {
-        width: 80%;
         min-height: 48px;
-        margin: 15px auto 18px;
         font-size: 18px;
-        border-radius: 28px;
     }
 
     .calculate-btn {
         min-height: 52px;
         font-size: 22px;
-        border-radius: 17px;
-    }
-
-    .results {
-        margin-top: 18px;
-    }
-
-    .result-box {
-        min-height: 65px;
-        margin-bottom: 10px;
-        padding: 14px 15px 14px 52px;
-        border-radius: 0 20px 20px 20px;
-    }
-
-    .bookmark {
-        width: 40px;
-        height: 50px;
     }
 
     .result-text {
         font-size: 17px;
     }
 
-    .medal {
-        font-size: 21px;
-    }
-
     .add-group-btn {
         height: 60px;
         font-size: 40px;
-        border-radius: 30px;
     }
 }
