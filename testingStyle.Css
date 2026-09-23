@@ -538,16 +538,16 @@ body {
     }
 
     .bookmark {
-        width: 30px !important;
-        height: 40px !important;
+        width: 40px !important;
+        height: 50px !important;
     }
 
     .result-box {
-        padding: 14px 15px 14px 45px;
+        padding: 20px 15px 20px 45px;
     }
 
     .medal {
-        font-size: 18px ;
+        font-size: 20px ;
         margin-left: 3px;
     }
 }
