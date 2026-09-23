@@ -96,6 +96,9 @@ function createProductBox() {
             <div class="input-wrap">
 
                 <select class="promotion-select">
+                    <option value="none">
+                        ไม่มี
+                    </option>
 
                     <option value="x">
                         x
@@ -448,7 +451,7 @@ function calculateGroup(group) {
 
                 <div class="result-text">
 
-                    {item.index + 1}
+                    สินค้าชิ้นที่ #${item.index + 1}
                     :
 
                     <span class="result-name">
