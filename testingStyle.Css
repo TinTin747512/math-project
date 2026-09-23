@@ -538,11 +538,19 @@ body {
     }
 
     .bookmark {
-        width: 35px !important;
-        height: 45px !important;
+        width: 30px !important;
+        height: 40px !important;
     }
 
     .result-box {
         padding: 14px 15px 14px 45px;
+    }
+
+    .first {
+        font-size: 30px;
+    }
+
+    .second {
+        font-size: 30px;
     }
 }
