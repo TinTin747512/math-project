@@ -546,11 +546,8 @@ body {
         padding: 14px 15px 14px 45px;
     }
 
-    .first {
-        font-size: 10px;
-    }
-
-    .second {
-        font-size: 10px;
+    .medal {
+        font-size: 18px ;
+        margin-left: 3px;
     }
 }
