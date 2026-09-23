@@ -541,4 +541,8 @@ body {
         width: 45px !important;
         height: 55px !important;
     }
+
+    .result-box {
+    padding: 25px 30px 25px 45px;
+    }
 }
