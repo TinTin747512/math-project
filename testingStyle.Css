@@ -359,7 +359,7 @@ body {
 /* อันดับ 2 */
 
 .result-box.second .result-name {
-    color: #ff3030;
+    color: #333;
 }
 
 
@@ -408,6 +408,46 @@ body {
 
     box-shadow:
         0 20px 30px rgba(0,0,0,0.22);
+}
+
+/* ช่องกรอกค่า X และ Y ของโปรโมชั่น */
+.promo-values {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.promo-values input {
+    width: 50%;
+    min-width: 0;
+    height: 60px;
+    padding: 10px 16px;
+    border: 3px solid #aaa;
+    border-radius: 20px;
+    background: #fafafa;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    outline: none;
+}
+
+.promo-values input:focus {
+    border-color: #777;
+}
+
+@media (max-width: 600px) {
+    .promo-values {
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .promo-values input {
+        height: 44px;
+        padding: 8px 10px;
+        border-width: 2px;
+        border-radius: 14px;
+        font-size: 16px;
+    }
 }
 
 
@@ -549,5 +589,45 @@ body {
     .medal {
         font-size: 25px ;
         margin-left: 3px;
+    }
+}
+
+/* ช่องกรอกค่า X และ Y ของโปรโมชั่น */
+.promo-values {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.promo-values input {
+    width: 50%;
+    min-width: 0;
+    height: 60px;
+    padding: 10px 16px;
+    border: 3px solid #aaa;
+    border-radius: 20px;
+    background: #fafafa;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    outline: none;
+}
+
+.promo-values input:focus {
+    border-color: #777;
+}
+
+@media (max-width: 600px) {
+    .promo-values {
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .promo-values input {
+        height: 44px;
+        padding: 8px 10px;
+        border-width: 2px;
+        border-radius: 14px;
+        font-size: 16px;
     }
 }
