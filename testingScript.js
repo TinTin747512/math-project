@@ -516,7 +516,6 @@ function formatNumber(number) {
 
 }
 
-
 /* =========================================
    เปิดเว็บมาให้มี 1 กล่องสีขาว
 ========================================= */
@@ -529,3 +528,136 @@ document.addEventListener(
 
     }
 );
+// คำนวณราคาสุทธิตามโปรโมชั่น
+function calculatePromotion(price, quantity, promoType, x, y) {
+    // แปลงค่าให้เป็นตัวเลข และป้องกันค่าติดลบ
+    price = Math.max(0, Number(price) || 0);
+    quantity = Math.max(0, Number(quantity) || 0);
+    x = Math.max(0, Number(x) || 0);
+    y = Math.max(0, Number(y) || 0);
+
+    const subtotal = price * quantity;
+    let total = subtotal;
+
+    // ใช้เมื่อโปรโมชั่นต้องซื้อให้ครบ X หน่วย
+    const enoughUnits = x > 0 && quantity >= x;
+
+    switch (Number(promoType)) {
+
+        // 1. ลด X บาท
+        case 1:
+            total = subtotal - x;
+            break;
+
+        // 2. ลด X%
+        case 2:
+            total = subtotal * (1 - Math.min(x, 100) / 100);
+            break;
+
+        // 3. ซื้อ X หน่วย ราคา Y บาท
+        // ทุกชุด X หน่วยราคา Y บาท ส่วนที่เหลือคิดราคาปกติ
+        case 3:
+            if (x > 0) {
+                const bundles = Math.floor(quantity / x);
+                const remaining = quantity % x;
+                total = bundles * y + remaining * price;
+            }
+            break;
+
+        // 4. ซื้อ X หน่วยขึ้นไป ราคา Y บาท
+        // เมื่อถึง X หน่วยแล้ว ยอดรวมทั้งหมดเป็น Y บาท
+        case 4:
+            if (enoughUnits) {
+                total = y;
+            }
+            break;
+
+        // 5. ซื้อ X หน่วย ลด Y บาท
+        // ลด Y บาทต่อทุกชุด X หน่วย
+        case 5:
+            if (x > 0) {
+                total = subtotal - Math.floor(quantity / x) * y;
+            }
+            break;
+
+        // 6. ซื้อ X หน่วยขึ้นไป ลด Y บาท
+        // ลด Y บาทหนึ่งครั้งเมื่อถึงจำนวนที่กำหนด
+        case 6:
+            if (enoughUnits) {
+                total = subtotal - y;
+            }
+            break;
+
+        // 7. ซื้อ X หน่วย ลด Y%
+        // ลด Y% จากราคาของทุกชุด X หน่วย
+        case 7:
+            if (x > 0) {
+                const bundles = Math.floor(quantity / x);
+                const discount = bundles * (x * price) *
+                    (Math.min(y, 100) / 100);
+                total = subtotal - discount;
+            }
+            break;
+
+        // 8. ซื้อ X หน่วยขึ้นไป ลด Y%
+        // ลด Y% จากยอดรวมทั้งหมดเมื่อถึง X หน่วย
+        case 8:
+            if (enoughUnits) {
+                total = subtotal * (1 - Math.min(y, 100) / 100);
+            }
+            break;
+
+        // 9. ซื้อ X หน่วย เหลือหน่วยละ Y บาท
+        // ทุกชุด X หน่วยคิดหน่วยละ Y บาท ส่วนที่เหลือราคาปกติ
+        case 9:
+            if (x > 0) {
+                const bundles = Math.floor(quantity / x);
+                const remaining = quantity % x;
+                total = bundles * x * y + remaining * price;
+            }
+            break;
+
+        // 10. ซื้อ X หน่วยขึ้นไป เหลือหน่วยละ Y บาท
+        case 10:
+            if (enoughUnits) {
+                total = quantity * y;
+            }
+            break;
+
+        // 11. ซื้อ X แถม Y
+        // quantity คือจำนวนสินค้าที่ต้องการได้รับทั้งหมด
+        case 11:
+            if (x > 0 && y > 0) {
+                const freeUnits = Math.floor(quantity / (x + y)) * y;
+                total = (quantity - freeUnits) * price;
+            }
+            break;
+
+        // 12. ซื้อครบ X บาท ลด Y บาท
+        case 12:
+            if (subtotal >= x) {
+                total = subtotal - y;
+            }
+            break;
+
+        // 13. ซื้อครบ X บาท ลด Y%
+        case 13:
+            if (subtotal >= x) {
+                total = subtotal * (1 - Math.min(y, 100) / 100);
+            }
+            break;
+
+        // 14. ราคาสมาชิก X บาท
+        // คิดราคาสมาชิก X บาทต่อหน่วย
+        case 14:
+            total = quantity * x;
+            break;
+
+        // ไม่มีโปรโมชั่น
+        default:
+            total = subtotal;
+    }
+
+    // ไม่ให้ราคาสุทธิติดลบ
+    return Math.max(0, total);
+}
