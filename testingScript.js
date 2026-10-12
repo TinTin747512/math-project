@@ -86,7 +86,7 @@ function createGroup() {
 
     const calculateButton = document.createElement("button");
     calculateButton.className = "calculate-btn";
-    calculateButton.textContent = "เป็ด";
+    calculateButton.textContent = "ยืนยัน";
 
     calculateButton.onclick = function () {
         calculateGroup(group);
