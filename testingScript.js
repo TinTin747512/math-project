@@ -55,7 +55,7 @@ function createProductBox() {
                 <input type="number" class="promo-x"
                        placeholder="ค่า X" min="0" step="any">
                 <input type="number" class="promo-y"
-                       placeholder="ค่า Y (ไม่จำเป็นต้องกรอก)" min="0" step="any">
+                       placeholder="ค่า Y (ไม่จำเป็น)" min="0" step="any">
             </div>
         </div>
     `;
