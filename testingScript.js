@@ -37,17 +37,16 @@ function createProductBox() {
                     <option value="1">1. ลด X บาท</option>
                     <option value="2">2. ลด X%</option>
                     <option value="3">3. ซื้อ X หน่วย ราคา Y บาท</option>
-                    <option value="4">4. ซื้อ X หน่วยขึ้นไป ราคา Y บาท</option>
-                    <option value="5">5. ซื้อ X หน่วย ลด Y บาท</option>
-                    <option value="6">6. ซื้อ X หน่วยขึ้นไป ลด Y บาท</option>
-                    <option value="7">7. ซื้อ X หน่วย ลด Y%</option>
-                    <option value="8">8. ซื้อ X หน่วยขึ้นไป ลด Y%</option>
-                    <option value="9">9. ซื้อ X หน่วย เหลือหน่วยละ Y บาท</option>
-                    <option value="10">10. ซื้อ X หน่วยขึ้นไป เหลือหน่วยละ Y บาท</option>
-                    <option value="11">11. ซื้อ X แถม Y</option>
-                    <option value="12">12. ซื้อครบ X บาท ลด Y บาท</option>
-                    <option value="13">13. ซื้อครบ X บาท ลด Y%</option>
-                    <option value="14">14. ราคาสมาชิก X บาท</option>
+                    <option value="5">4. ซื้อ X หน่วย ลด Y บาท</option>
+                    <option value="6">5. ซื้อ X หน่วยขึ้นไป ลด Y บาท</option>
+                    <option value="7">6. ซื้อ X หน่วย ลด Y%</option>
+                    <option value="8">7. ซื้อ X หน่วยขึ้นไป ลด Y%</option>
+                    <option value="9">8. ซื้อ X หน่วย เหลือหน่วยละ Y บาท</option>
+                    <option value="10">9. ซื้อ X หน่วยขึ้นไป เหลือหน่วยละ Y บาท</option>
+                    <option value="11">10. ซื้อ X แถม Y</option>
+                    <option value="12">11. ซื้อครบ X บาท ลด Y บาท</option>
+                    <option value="13">12. ซื้อครบ X บาท ลด Y%</option>
+                    <option value="14">13. ราคาสมาชิก X บาท</option>
                 </select>
             </div>
 
