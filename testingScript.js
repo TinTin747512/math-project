@@ -1,4 +1,3 @@
-
 /* =========================================
    สร้างกล่องสินค้า
 ========================================= */
@@ -34,19 +33,19 @@ function createProductBox() {
             <div class="input-wrap">
                 <select class="promotion-select">
                     <option value="0">ไม่มีโปรโมชั่น</option>
-                    <option value="1">1. ลด X บาท</option>
-                    <option value="2">2. ลด X%</option>
-                    <option value="3">3. ซื้อ X หน่วย ราคา Y บาท</option>
-                    <option value="5">4. ซื้อ X หน่วย ลด Y บาท</option>
-                    <option value="6">5. ซื้อ X หน่วยขึ้นไป ลด Y บาท</option>
-                    <option value="7">6. ซื้อ X หน่วย ลด Y%</option>
-                    <option value="8">7. ซื้อ X หน่วยขึ้นไป ลด Y%</option>
-                    <option value="9">8. ซื้อ X หน่วย เหลือหน่วยละ Y บาท</option>
-                    <option value="10">9. ซื้อ X หน่วยขึ้นไป เหลือหน่วยละ Y บาท</option>
-                    <option value="11">10. ซื้อ X แถม Y</option>
-                    <option value="12">11. ซื้อครบ X บาท ลด Y บาท</option>
-                    <option value="13">12. ซื้อครบ X บาท ลด Y%</option>
-                    <option value="14">13. ราคาสมาชิก X บาท</option>
+                    <option value="1">1.ลด X บาท</option>
+                    <option value="2">2.ลด X%</option>
+                    <option value="3">3.ซื้อ X หน่วย ราคา Y บาท</option>
+                    <option value="4">4.ซื้อ X หน่วย ลด Y บาท</option>
+                    <option value="5">5.ซื้อ X หน่วยขึ้นไป ลด Y บาท</option>
+                    <option value="6">6.ซื้อ X หน่วย ลด Y%</option>
+                    <option value="7">7.ซื้อ X หน่วยขึ้นไป ลด Y%</option>
+                    <option value="8">8.ซื้อ X หน่วย เหลือหน่วยละ Y บาท</option>
+                    <option value="9">9.ซื้อ X หน่วยขึ้นไป เหลือหน่วยละ Y บาท</option>
+                    <option value="10">10.ซื้อ X แถม Y</option>
+                    <option value="11">11.ซื้อครบ X บาท ลด Y บาท</option>
+                    <option value="12">12.ซื้อครบ X บาท ลด Y%</option>
+                    <option value="13">13.ราคาสมาชิก X บาท</option>
                 </select>
             </div>
 
@@ -54,14 +53,13 @@ function createProductBox() {
                 <input type="number" class="promo-x"
                        placeholder="ค่า X" min="0" step="any">
                 <input type="number" class="promo-y"
-                       placeholder="ค่า Y (ไม่จำเป็น)" min="0" step="any">
+                       placeholder="ค่า Y" min="0" step="any">
             </div>
         </div>
     `;
 
     return product;
 }
-
 
 /* =========================================
    สร้างกล่องสีขาว
@@ -160,21 +158,17 @@ function calculatePromotion(price, quantity, promoType, x, y) {
             }
             break;
 
-        case 4: // ซื้อถึง X หน่วย ยอดรวมเป็น Y บาท
-            if (enoughUnits) total = y;
-            break;
-
-        case 5: // ทุกชุด X หน่วย ลด Y บาท
+        case 4: // ทุกชุด X หน่วย ลด Y บาท
             if (x > 0) {
                 total = subtotal - Math.floor(quantity / x) * y;
             }
             break;
 
-        case 6: // ซื้อถึง X หน่วย ลด Y บาทหนึ่งครั้ง
+        case 5: // ซื้อถึง X หน่วย ลด Y บาทหนึ่งครั้ง
             if (enoughUnits) total = subtotal - y;
             break;
 
-        case 7: // ทุกชุด X หน่วย ลด Y%
+        case 6: // ทุกชุด X หน่วย ลด Y%
             if (x > 0) {
                 const bundles = Math.floor(quantity / x);
                 const discount =
@@ -183,13 +177,13 @@ function calculatePromotion(price, quantity, promoType, x, y) {
             }
             break;
 
-        case 8: // ซื้อถึง X หน่วย ลด Y%
+        case 7: // ซื้อถึง X หน่วย ลด Y%
             if (enoughUnits) {
                 total = subtotal * (1 - Math.min(y, 100) / 100);
             }
             break;
 
-        case 9: // ทุกชุด X หน่วย เหลือหน่วยละ Y บาท
+        case 8: // ทุกชุด X หน่วย เหลือหน่วยละ Y บาท
             if (x > 0) {
                 const bundles = Math.floor(quantity / x);
                 const remaining = quantity % x;
@@ -197,11 +191,11 @@ function calculatePromotion(price, quantity, promoType, x, y) {
             }
             break;
 
-        case 10: // ซื้อถึง X หน่วย เหลือหน่วยละ Y บาท
+        case 9: // ซื้อถึง X หน่วย เหลือหน่วยละ Y บาท
             if (enoughUnits) total = quantity * y;
             break;
 
-        case 11: // ซื้อ X แถม Y
+        case 10: // ซื้อ X แถม Y
             // quantity หมายถึงจำนวนที่ต้องการได้รับรวมของแถม
             if (x > 0 && y > 0) {
                 const freeUnits = Math.floor(quantity / (x + y)) * y;
@@ -209,17 +203,17 @@ function calculatePromotion(price, quantity, promoType, x, y) {
             }
             break;
 
-        case 12: // ซื้อครบ X บาท ลด Y บาท
+        case 11: // ซื้อครบ X บาท ลด Y บาท
             if (subtotal >= x) total = subtotal - y;
             break;
 
-        case 13: // ซื้อครบ X บาท ลด Y%
+        case 12: // ซื้อครบ X บาท ลด Y%
             if (subtotal >= x) {
                 total = subtotal * (1 - Math.min(y, 100) / 100);
             }
             break;
 
-        case 14: // ราคาสมาชิก X บาทต่อหน่วย
+        case 13: // ราคาสมาชิก X บาทต่อหน่วย
             total = quantity * x;
             break;
 
