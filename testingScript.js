@@ -13,7 +13,7 @@ function createProductBox() {
                value="ชื่อสินค้า" onclick="this.select()">
 
         <div class="field">
-            <label>ราคา</label>
+            <label>ราคาสินค้า<span style="color:#888;">(ต่อหน่วย)</span></label>
             <div class="input-wrap">
                 <input type="number" class="price" min="0" step="any">
                 <span class="input-unit">บาท</span>
